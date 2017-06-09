@@ -112,7 +112,40 @@ def depreciable_gift_property():
     main()
     return
 
-def deathbed_gifts():
+def deathbed_gifts(): # this one requires more reading to fully understand
+
+    offspring_donor_fmv = float(raw_input(yellow('Enter the FMV from the donor offspring: ')).replace(',',''))
+    offspring_donor_cost = float(raw_input(yellow('Enter the COST of the donated property to the donor: ')).replace(',',''))
+    offspring_donor_basis = float(raw_input(yellow('Enter the BASIS of the donated property from the donor: ')).replace(',',''))
+    donee_elder_time_living = float(raw_input(yellow('Enter the amount of years between when the donee lived and died (while holding the donated property): ')).replace(',',''))
+    donee_elder_fmv_death = float(raw_input(yellow('Enter the FMV of the property at time of death: ')).replace(',',''))
+
+    if 0 < donee_elder_time_living <= 1:
+        one_year_exception = True
+    else:
+        one_year_exception = False
+
+    if one_year_exception == True:
+        offspring_donor_basis = offspring_donor_basis
+    else:
+        offspring_donor_basis = donee_elder_fmv_death
+
+    improvements_to_property_before_death = float(raw_input(yellow('Enter the amounts of any improvements made to the property by the elder before death (and after receiving the donated property)')).replace(',',''))
+
+    if improvements_to_property_before_death == '':
+        improvements_to_property_before_death = 0
+
+    offspring_donor_basis = offspring_donor_basis + improvements_to_property_before_death
+
+    string_offspring_basis_after_bequeath = 'NEW BASIS FOR OFFSPRING UPON RECEIVING LAND BACK AFTER DONEE DIED: ' + str(offspring_donor_basis)
+
+    green(string_offspring_basis_after_bequeath)
+
+    saved_answer = './solutions/deathbed_gifts_solution' + timestr + '.csv'
+    w = open(saved_answer,'a+')
+    w.write(string_offspring_basis_after_bequeath + '\n')
+    w.close()
+    main()
     return
 
 def main():
