@@ -28,13 +28,21 @@ def go_back_main_menu_module():
     os.system('python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/main.py')
     return
 cyan('Chapters 4 and 5, Exam 1')
-
+    # print """
+    # # 1. Depreciation Calculator (MACRS, Bonus, and Section 179)
+    # # 2. Original Issue Discount Calculator
+    # # 3. Converting Personal-Use to Business Income Producing Property, Cost Recovery Calculator
+    # # 4. Deathbed Gifts Calculator
+    # # 5. Gifts, stock, Calculator
+    # # 6. Depreciable gift property calculator
+    # # 0. Return to Main Menu
+    # """
 def opt_1():
-    os.system('python ./realization_princ_calc.py')
+    os.system('python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/MACRS_calc.py')
     return
 
 def opt_2():
-    os.system('python ./fiscal_yr_eligibility_calc.py')
+    os.system('python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/OID_calc.py')
     return
 
 def opt_3():
@@ -70,17 +78,27 @@ def opt_9():
     return
 
 def main():
+    # print """
+    # # 1. Realization Principle Calculator
+    # # 2. Fiscal Year Eligibility Calculator
+    # # 3. Tax Consequences Calculator
+    # # 4. Constructive Receipt Determination Calculator
+    # # 5. Tax Accounting Method Calculator
+    # # 6. Income Source Taxability Calculator
+    # # 7. Dividends Taxation Calculator
+    # #    7a. Qualified Dividend Calculator
+    # # 8. Life Insurance Proceeds Calculator
+    # # 9. Taxability of Discharge from Indebtness/Cancellation/Forgiveness of Debt Calculator
+    # # 0. Return to Main Menu
+    # """
+
     print """
-    # 1. Realization Principle Calculator
-    # 2. Fiscal Year Eligibility Calculator
-    # 3. Tax Consequences Calculator
-    # 4. Constructive Receipt Determination Calculator
-    # 5. Tax Accounting Method Calculator
-    # 6. Income Source Taxability Calculator
-    # 7. Dividends Taxation Calculator
-    #    7a. Qualified Dividend Calculator
-    # 8. Life Insurance Proceeds Calculator
-    # 9. Taxability of Discharge from Indebtness/Cancellation/Forgiveness of Debt Calculator
+    # 1. Depreciation Calculator (MACRS, Bonus, and Section 179)
+    # 2. Original Issue Discount Calculator
+    # 3. Converting Personal-Use to Business Income Producing Property, Cost Recovery Calculator
+    # 4. Deathbed Gifts Calculator
+    # 5. Gifts, stock, Calculator
+    # 6. Depreciable gift property calculator
     # 0. Return to Main Menu
     """
 
