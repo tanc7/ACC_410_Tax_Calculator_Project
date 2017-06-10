@@ -678,7 +678,7 @@ def find_macrs_depr(calc_selected):
     elif calc_selected == "S179_Additional_Depr_MACRS":
             s179_addi_macrs_calc()
 
-    return macrs_depr
+    return
 
 def find_macrs_straight_line_half_year():
 
@@ -978,5 +978,5 @@ def main():
     else:
         red('You have entered a invalid option')
         main()
-    return macrs_depr
+    return
 main()

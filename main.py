@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding=UTF-8
+
 from termcolor import colored
 import os
 import sys
