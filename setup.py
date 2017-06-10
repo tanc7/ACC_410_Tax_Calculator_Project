@@ -20,7 +20,9 @@ installation_dir = "/root/Documents/ACC_410_Exam_Calculator_Project"
 temp_dir = "/tmp"
 
 print "BUILDING MAIN DIRECTORY %s" % installation_dir
-os.system("mkdir %s") % installation_dir
+cmd_string = "mkdir %s" % installation_dir
+os.system(cmd_string)
+# os.system("mkdir %s") % installation_dir
 print "GIT CLONING LATEST VERSION OF ACC_410_TAX_CALCULATOR"
 os.chdir(temp_dir)
 cmd_string = "git clone %s" % github_URL
