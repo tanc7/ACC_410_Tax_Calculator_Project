@@ -1,12 +1,13 @@
+#!/usr/bin/env python
+# coding=UTF-8
+
 from termcolor import colored
 import os
 import sys
 import socket
 import StringIO
-import time
-import operator
-# os.chdir('/root/Documents/ACC_410_Exam_Calculator_Project')
-os.chdir('/root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5')
+
+os.chdir('/root/Documents/ACC_410_Exam_Calculator_Project')
 def red(string):
     string = colored(string,'red',attrs=['bold'])
     print string
@@ -24,128 +25,36 @@ def cyan(string):
     print string
     return string
 
-def go_back_main_menu_module():
-    os.system('python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/main.py')
-    return
-cyan('Chapters 4 and 5, Exam 1')
-    # print """
-    # # 1. Depreciation Calculator (MACRS, Bonus, and Section 179)
-    # # 2. Original Issue Discount Calculator
-    # # 3. Converting Personal-Use to Business Income Producing Property, Cost Recovery Calculator
-    # # 4. Deathbed Gifts Calculator
-    # # 5. Gifts, stock, Calculator
-    # # 6. Depreciable gift property calculator
-    # # 0. Return to Main Menu
-    # """
-def opt_1():
-    os.system('python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/MACRS_calc.py')
-    return
-
-def opt_2():
-    os.system('python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/OID_calc.py')
-    return
-
-def opt_3():
-    os.system('python ./tax_conseq_calc.py')
-    return
-
-def opt_4():
-    os.system('python ./constructive_receipt_calc.py')
-    return
-
-def opt_5():
-    os.system('python ./tax_method_calc.py')
-    return
-
-def opt_6():
-    os.system('python ./income_src_calc.py')
-    return
-
-def opt_7():
-    os.system('python ./dividends_tax_calc.py')
-    return
-
-def opt_7_a():
-    os.system('python ./qual_div_calc.py')
-    return
-
-def opt_8():
-    os.system('python ./life_insurance_proceeds_calc.py')
-    return
-
-def opt_9():
-    os.system('python ./discharge_cancellation_forgiveness_calc.py')
-    return
-
 def main():
-    # print """
-    # # 1. Realization Principle Calculator
-    # # 2. Fiscal Year Eligibility Calculator
-    # # 3. Tax Consequences Calculator
-    # # 4. Constructive Receipt Determination Calculator
-    # # 5. Tax Accounting Method Calculator
-    # # 6. Income Source Taxability Calculator
-    # # 7. Dividends Taxation Calculator
-    # #    7a. Qualified Dividend Calculator
-    # # 8. Life Insurance Proceeds Calculator
-    # # 9. Taxability of Discharge from Indebtness/Cancellation/Forgiveness of Debt Calculator
-    # # 0. Return to Main Menu
-    # """
-
+    cyan('MAIN MENU\n\nFEDERAL TAX CLASS UTILITIES\nCHANG TAN\nACC 410\nInstructor: Donald Jones\nSemester: Summer 2017')
     print """
-    # 1. Depreciation Calculator (MACRS, Bonus, and Section 179)
-    # 2. Original Issue Discount Calculator
-    # 3. Converting Personal-Use to Business Income Producing Property, Cost Recovery Calculator
-    # 4. Deathbed Gifts Calculator
-    # 5. Gifts, stock, Calculator
-    # 6. Depreciable gift property calculator
-    # 0. Return to Main Menu
+    # 0. Tax Calculator, for Gross Income, Taxable Income, Refunds, etc.
+    # 1. Chapter 4 and 5
+    # 2. Chapter 6 and 7
+    # 3. Chapter 8 and 12
+    # 4. Chapter 14 and 15
     """
 
     opt_choice = str(raw_input("Enter a OPTION: "))
 
-    if opt_choice == "0":
+    if opt_choice == "1":
         os.system('clear')
-        go_back_main_menu_module()
-        return
-    elif opt_choice == "1":
-        os.system('clear')
-        opt_1()
-        return
+        os.system('python ./Chapter_4_5/main.py')
     elif opt_choice == "2":
         os.system('clear')
-        opt_2()
-        return
+        os.system('python ./Chapter_6_7/main.py')
     elif opt_choice == "3":
         os.system('clear')
-        opt_3()
-        return
+        os.system('python ./Chapter_8_12/main.py')
     elif opt_choice == "4":
         os.system('clear')
-        opt_4()
-        return
-    elif opt_choice == "5":
+        os.system('python ./Chapter_14_15/main.py')
+    elif opt_choice == "0":
         os.system('clear')
-        opt_5()
+        os.system('python ./tax_calculator_general.py')
         return
-    elif opt_choice == "6":
-        os.system('clear')
-        opt_6()
-        return
-    elif opt_choice == "7":
-        os.system('clear')
-        opt_7()
-        return
-    elif opt_choice == "8":
-        os.system('clear')
-        opt_8()
-        return
-    elif opt_choice == "9":
-        os.system('clear')
-        opt_9()
-        return
-
     else:
+        # print 'You have entered a invalid option'
         red('You have entered a invalid option')
         main()
     return

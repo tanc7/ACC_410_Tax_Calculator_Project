@@ -91,8 +91,8 @@ def calc_macrs_mid_quarter():
                 4: 5
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
-            yellow(string)
+            string_applicable_percentage = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
+            yellow(string_applicable_percentage)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
 
@@ -633,7 +633,7 @@ def find_macrs_depr(calc_selected):
         mq_question = str(raw_input(cyan('Is your property on or after October 1st?: ')))
         if mq_question == "y":
             # percentage_assets_question = str(raw_input(cyan('How much of a percentage is placed in the last quarter?: ')))
-            percentage_assets_question = float(raw_input(cyan('How much of a percentage is placed in the last quarter? No decimals or punctuation: ')))
+            percentage_assets_question = float(raw_input(cyan('How much of a percentage is placed in the last quarter? No decimals or punctuation: ')).replace('%',''))
             percentage_assets_question = percentage_assets_question / 100
 
             if percentage_assets_question > 0.4:
@@ -644,7 +644,7 @@ def find_macrs_depr(calc_selected):
             convention = 'Half-Year'
         else:
             red('You have entered a invalid option')
-            find_macrs_depr()
+            find_macrs_depr(calc_selected)
 
         if convention == "Mid-Quarter":
             calc_macrs_mid_quarter()
