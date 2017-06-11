@@ -31,6 +31,59 @@ def go_back_main_menu_module():
 statutory_life = 0
 convention = None
 
+# mid-month realty sale dictionary
+
+mid_month_realty_sale_dict = {
+    1: 0,
+    2: 1.5,
+    3: 2.5,
+    4: 3.5,
+    5: 4.5,
+    6: 5.5,
+    7: 6.5,
+    8: 7.5,
+    9: 8.5,
+    10: 9.5,
+    11: 10.5,
+    12: 11.5
+}
+
+def mid_month_sale_realty():
+
+    print """
+    In what month did you sell the real property?
+
+    1. January
+    2. February
+    3. March
+    4. April
+    5. May
+    6. June
+    7. July
+    8. August
+    9. September
+    10. October
+    11. November
+    12. December
+    """
+    try:
+        opt_choice = float(raw_input(yellow("Enter the month-of-sale as a number: ")).replace(',',''))
+        if opt_choice < 1 or opt_choice > 12:
+            print red('You did not enter a valid month, please enter a number between 1 to 12')
+            mid_month_realty_sale_dict()
+
+        multiplier_mid_month = mid_month_realty_sale_dict[opt_choice] / 12
+
+        annual_macrs_depr = float(raw_input(yellow("Enter the annual MACRS depreciation if you were to have KEPT the property: ")).replace(',',''))
+
+        final_year_depr_after_sale = annual_macrs_depr * multiplier_mid_month
+
+        solution_string = "FINAL YEAR MACRS Depreciation accounting for SALE by mid-month convention: %s" % str(final_year_depr_after_sale)
+    except Exception:
+        mid_month_realty_sale_dict()
+    print green(solution_string)
+    main()
+    return
 # need to put entire macrs table in here
 def determine_convention():
     if forty_percent_rule == True:
@@ -621,8 +674,9 @@ def calc_macrs_realty_bottom():
     string = 'Your answers are saved at: ' + saved_answer
     green(string)
 
+    mid_month_sale_realty()
     main()
-    return
+    return macrs_depr
 
 def find_macrs_depr(calc_selected):
 
@@ -954,6 +1008,7 @@ def main():
     #6. MACRS Straight-Line Half-Year
     #7. Alternative Minimum Tax Tax Calculator
     """
+    #8. Final-Year MACRS-Realty Mid-Month Sale Depreciation Calculator, REQUIRES knowing the FULL ANNUAL DEPRECIATION FIRST
 
     opt_choice = str(raw_input("Enter a OPTION: "))
 
@@ -975,6 +1030,8 @@ def main():
         find_s179_calc()
     elif opt_choice == "6":
         find_macrs_straight_line_half_year()
+    elif opt_choice == "8":
+        mid_month_sale_realty()
     else:
         red('You have entered a invalid option')
         main()

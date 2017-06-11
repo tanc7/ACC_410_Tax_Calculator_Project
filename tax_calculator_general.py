@@ -35,6 +35,15 @@ def cyan(string):
 # TI_FTR = Taxable_Income * Tax_Rate
 # Tax_Owed_Or_Refunded = TI_FTR - Tax_Credits
 
+Schedule_X_Dict = {
+
+}
+
+def determine_tax_rate():
+
+
+    return
+
 def find_TI_FTR():
     Tax_Owed_Or_Refunded = float(raw_input("Enter Tax Owed or Refunded: ").replace(',',''))
     Tax_Credits = float(raw_input("Enter Tax Credits: ").replace(',',''))

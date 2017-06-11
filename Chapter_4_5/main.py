@@ -78,15 +78,26 @@ def opt_9():
     return
 
 def opt_10():
-    os.system("/root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/marginal_tax_rate_calculator.py")
+    os.system("python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/marginal_tax_rate_calculator.py")
     return
 
 def opt_11():
-    os.system("/root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/tax_method_calc.py")
+    os.system("python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/tax_method_calc.py")
+    return
+
+def opt_12():
+    os.system("python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/insolvency_calc.py")
+    return
+
+def opt_13():
+    os.system("python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/cash_accrual_method_calc.py")
+    return
+
+def opt_14():
+    os.system("python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/allowed_allowable_calc.py")
     return
 
 def main():
-
 
     print """
     # 1. Depreciation Calculator (MACRS, Bonus, and Section 179)
@@ -100,6 +111,9 @@ def main():
     # 9. Life Insurance Proceeds Calculator
     # 10. Marginal Tax Rate Calculator
     # 11. Tax Method Calculator
+    # 12. Forgiveness from Debt by Insolvency
+    # 13. Cash Method versus Accrual Method Net Profit
+    # 14. Allowed versus Allowable Depreciation
     # 0. Return to Main Menu
     """
 
@@ -150,6 +164,15 @@ def main():
     elif opt_choice == "11":
         os.system('clear')
         opt_11()
+    elif opt_choice == "12":
+        os.system('clear')
+        opt_12()
+    elif opt_choice == "13":
+        os.system('clear')
+        opt_13()
+    elif opt_choice == "14":
+        os.system('clear')
+        opt_14()
         return
 
     else:
