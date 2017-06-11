@@ -48,8 +48,12 @@ def calculate_start_up_expenses():
     elect_question = str(raw_input(yellow("Enter 'y' or 'n': ")).replace(',',''))
 
     if elect_question == "y":
-        remaining_start_up_expenses = start_up_expenses - 5000
-        immediate_deduction = 5000
+        if start_up_expenses > 50000:
+            dollar_for_dollar_penalty = start_up_expenses - 50000
+            immediate_deduction = 5000 - dollar_for_dollar_penalty
+        else:
+            immediate_deduction = 5000
+        remaining_start_up_expenses = start_up_expenses - immediate_deduction
     else:
         remaining_start_up_expenses = start_up_expenses
         immediate_deduction = 0

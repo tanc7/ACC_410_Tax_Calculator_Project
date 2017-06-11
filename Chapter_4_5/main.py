@@ -97,6 +97,9 @@ def opt_14():
     os.system("python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/allowed_allowable_calc.py")
     return
 
+def opt_15():
+    os.system("python /root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5/listed_property_calc.py")
+    return
 def main():
 
     print """
@@ -114,6 +117,7 @@ def main():
     # 12. Forgiveness from Debt by Insolvency
     # 13. Cash Method versus Accrual Method Net Profit
     # 14. Allowed versus Allowable Depreciation
+    # 15. Listed Property, Maximum Deductions S179 + Additional 50% Bonus
     # 0. Return to Main Menu
     """
 
@@ -173,6 +177,9 @@ def main():
     elif opt_choice == "14":
         os.system('clear')
         opt_14()
+    elif opt_choice == "15":
+        os.system('clear')
+        opt_15()
         return
 
     else:
