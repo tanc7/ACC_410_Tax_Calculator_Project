@@ -108,7 +108,7 @@ def calc_macrs_mid_quarter():
                 4: 8.33
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
             yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
@@ -123,7 +123,7 @@ def calc_macrs_mid_quarter():
                 4: 61.11
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
             yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
@@ -160,7 +160,7 @@ def calc_macrs_mid_quarter():
                 4: 38
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
             yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
@@ -183,7 +183,7 @@ def calc_macrs_mid_quarter():
             }
             applicable_percentage = macrs_dict[recovery_quarter]
             string_applicable_percentage = str(applicable_percentage) + "%"
-            string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
             yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
@@ -199,7 +199,7 @@ def calc_macrs_mid_quarter():
                 4: 27.55
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
             yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
@@ -244,7 +244,7 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
         }
         applicable_percentage = macrs_dict[recovery_year]
         string_applicable_percentage = str(applicable_percentage)
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
@@ -265,7 +265,7 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
         string_applicable_percentage = str(applicable_percentage) + '%'
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
         green(string)
@@ -284,7 +284,7 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
         }
         applicable_percentage = macrs_dict[recovery_year]
         string_applicable_percentage = str(applicable_percentage) + '%'
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
@@ -308,7 +308,7 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
             11: 3.28
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
@@ -337,7 +337,7 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
             16: 2.95
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
@@ -371,7 +371,7 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
             21: 2.231
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
@@ -425,7 +425,7 @@ def calc_macrs_half_year():
         }
         applicable_percentage = macrs_dict[recovery_year]
         string_applicable_percentage = str(applicable_percentage)
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
@@ -446,7 +446,7 @@ def calc_macrs_half_year():
         string_applicable_percentage = str(applicable_percentage) + '%'
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
         green(string)
@@ -465,7 +465,7 @@ def calc_macrs_half_year():
         }
         applicable_percentage = macrs_dict[recovery_year]
         string_applicable_percentage = str(applicable_percentage) + '%'
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
@@ -489,7 +489,7 @@ def calc_macrs_half_year():
             11: 3.28
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
@@ -518,7 +518,7 @@ def calc_macrs_half_year():
             16: 2.95
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
@@ -552,7 +552,7 @@ def calc_macrs_half_year():
             21: 2.231
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + string_applicable_percentage
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
         yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage

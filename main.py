@@ -45,7 +45,7 @@ def main():
         os.system('python ./Chapter_6_7/main.py')
     elif opt_choice == "3":
         os.system('clear')
-        os.system('python ./Chapter_8_12/main.py')
+        os.system('python ./Chapter_8_12/homework_problems.py')
     elif opt_choice == "4":
         os.system('clear')
         os.system('python ./Chapter_14_15/main.py')

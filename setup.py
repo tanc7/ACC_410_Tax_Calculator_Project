@@ -28,7 +28,6 @@ os.chdir(temp_dir)
 cmd_string = "git clone %s" % github_URL
 os.system(cmd_string)
 os.chdir('./ACC_410_Tax_Calculator_Project')
-os.system("chmod 777 ./*")
 print "INSTALLING"
 cmd_string = "cp -r ./* %s" % installation_dir
 os.system(cmd_string)
@@ -39,7 +38,6 @@ os.system("pip install termcolor")
 os.system("pip install StringIO")
 print "INSTALLING MAIN EXECUTABLE"
 os.system("cp -r /root/Documents/ACC_410_Exam_Calculator_Project/main.py /usr/local/bin/Accounting_410_Tax_Calculator.py")
-os.system("chmod 777 /usr/local/bin/Accounting_410_Tax_Calculator.py")
 
 print "STARTING TAX CALCULATOR"
 print "Installation Complete, to run this again, open a terminal and type \n\n\t\t'Accounting_410_Tax_Calculator.py'"
