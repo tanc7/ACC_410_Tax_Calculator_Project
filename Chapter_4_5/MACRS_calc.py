@@ -9,19 +9,19 @@ import operator
 os.chdir('/root/Documents/ACC_410_Exam_Calculator_Project/Chapter_4_5')
 def red(string):
     string = colored(string,'red',attrs=['bold'])
-    print string
+    #string
     return string
 def green(string):
     string = colored(string,'green',attrs=['bold'])
-    print string
+    #string
     return string
 def yellow(string):
     string = colored(string,'yellow',attrs=['bold'])
-    print string
+    #string
     return string
 def cyan(string):
     string = colored(string,'cyan',attrs=['bold'])
-    print string
+    #string
     return string
 
 def go_back_main_menu_module():
@@ -96,7 +96,7 @@ def determine_convention():
 def calc_macrs_mid_quarter():
 
     recovery_year = float(raw_input(cyan('What recovery YEAR is it?: ')).replace(',',''))
-    type_property = float(raw_input(cyan('What year-type property is it?: ')).replace(',',''))
+    type_property = float(raw_input(cyan('What year-type property is it? (Enter 3, 5, 7, 10, 15, or 20: ')).replace(',',''))
     recovery_quarter = float(raw_input(yellow('What recovery QUARTER is it?: ')).replace(',',''))
     acquisition_cost = float(raw_input(red('What is the ACQUISITION COST: ')).replace(',',''))
     if type_property == 3:
@@ -108,13 +108,13 @@ def calc_macrs_mid_quarter():
                 4: 8.33
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-            yellow(string)
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage) + '%'
+            print yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
 
             string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-            green(string)
+            print green(string)
         elif recovery_year == 2:
             macrs_dict = {
                 1: 27.78,
@@ -123,13 +123,13 @@ def calc_macrs_mid_quarter():
                 4: 61.11
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-            yellow(string)
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage) + '%'
+            print yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
 
             string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-            green(string)
+            print green(string)
 
         else:
             red('You have specified a INVALID Recovery Year')
@@ -144,13 +144,13 @@ def calc_macrs_mid_quarter():
                 4: 5
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string_applicable_percentage = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
+            string_applicable_percentage = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage) + '%'
             yellow(string_applicable_percentage)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
 
             string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-            green(string)
+            print green(string)
 
         elif recovery_year == 2:
             macrs_dict = {
@@ -160,13 +160,13 @@ def calc_macrs_mid_quarter():
                 4: 38
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-            yellow(string)
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage) + '%'
+            print yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
 
             string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-            green(string)
+            print green(string)
 
         else:
             red('You have specified a INVALID Recovery Year')
@@ -182,14 +182,14 @@ def calc_macrs_mid_quarter():
                 4: 3.57
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string_applicable_percentage = str(applicable_percentage) + "%"
-            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-            yellow(string)
+            #string_applicable_percentage = str(applicable_percentage) + "%"
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage) + '%'
+            print yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
 
             string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-            green(string)
+            print green(string)
 
         elif recovery_year == 2:
             macrs_dict = {
@@ -199,13 +199,13 @@ def calc_macrs_mid_quarter():
                 4: 27.55
             }
             applicable_percentage = macrs_dict[recovery_quarter]
-            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-            yellow(string)
+            string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage) + '%'
+            print yellow(string)
             applicable_percentage = applicable_percentage / 100
             macrs_depr = acquisition_cost * applicable_percentage
 
             string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-            green(string)
+            print green(string)
 
         else:
             red('You have specified a INVALID Recovery Year')
@@ -226,14 +226,14 @@ def calc_macrs_mid_quarter():
     w.write(write_string)
     w.close()
     string = 'Your answers are saved at: ' + saved_answer
-    green(string)
+    print green(string)
     main()
     return
 def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, s179_deduction, additional_fifty_depr, basis):
 
     timestr = time.strftime("%Y%m%d-%H%M%S")
     # recovery_year = float(raw_input(cyan('What recovery_year is it?: ')).replace(',',''))
-    type_property = float(raw_input(cyan('What year-type property is it?: ')).replace(',',''))
+    type_property = float(raw_input(cyan('What year-type property is it? (Enter 3, 5, 7, 10, 15, or 20: ')).replace(',',''))
     # acquisition_cost = float(raw_input(cyan('What is the acquisition_cost? (Enter the remaining basis if from the comprehensive question): ')).replace(',',''))
     if type_property == 3:
         macrs_dict = {
@@ -243,14 +243,14 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
             4: 7.41
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string_applicable_percentage = str(applicable_percentage)
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string_applicable_percentage = str(applicable_percentage * 100)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
     elif type_property == 5:
         macrs_dict = {
@@ -262,13 +262,13 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
             6: 5.76
         }
         applicable_percentage = float(macrs_dict[recovery_year])
-        string_applicable_percentage = str(applicable_percentage) + '%'
+        string_applicable_percentage = str(applicable_percentage * 100) + '%'
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
     elif type_property == 7:
@@ -283,14 +283,14 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
             8: 4.46
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string_applicable_percentage = str(applicable_percentage) + '%'
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string_applicable_percentage = str(applicable_percentage * 100) + '%'
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
     elif type_property == 10:
@@ -308,13 +308,13 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
             11: 3.28
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
     elif type_property == 15:
@@ -337,13 +337,13 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
             16: 2.95
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
     elif type_property == 20:
@@ -371,13 +371,13 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
             21: 2.231
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
 
@@ -391,30 +391,30 @@ def comprehensive_problem_calc_macrs_half_year(recovery_year, acquisition_cost, 
 
     basis = basis - macrs_depr
     string = 'FINAL BASIS AFTER DEDUCTIONS: ' + str(basis)
-    green(string)
+    print green(string)
     w.write(string + '\n')
     string = 'SECTION 179 DEDUCTION TAKEN: ' + str(s179_deduction)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
     string = 'ADDITIONAL 50% BONUS DEDUCTION TAKEN: ' + str(additional_fifty_depr)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
 
     string = 'MACRS DEPRECIATION TAKEN: ' + str(macrs_depr)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
     total_depreciation_current_year = s179_deduction + additional_fifty_depr + macrs_depr
     string = 'TOTAL DEPRECIATION TAKEN: ' + str(total_depreciation_current_year)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
     w.close()
     string = '\nYour solution is located here: ' + saved_answer
-    green(string)
+    print green(string)
     main()
     return macrs_depr
 def calc_macrs_half_year():
     recovery_year = float(raw_input(cyan('What recovery_year is it?: ')).replace(',',''))
-    type_property = float(raw_input(cyan('What year-type property is it?: ')).replace(',',''))
+    type_property = float(raw_input(cyan('What year-type property is it? (Enter 3, 5, 7, 10, 15, or 20: ')).replace(',',''))
     acquisition_cost = float(raw_input(cyan('What is the acquisition_cost? (Enter the remaining basis if from the comprehensive question): ')).replace(',',''))
     if type_property == 3:
         macrs_dict = {
@@ -424,14 +424,14 @@ def calc_macrs_half_year():
             4: 7.41
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string_applicable_percentage = str(applicable_percentage)
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string_applicable_percentage = str(applicable_percentage * 100)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
     elif type_property == 5:
         macrs_dict = {
@@ -443,13 +443,13 @@ def calc_macrs_half_year():
             6: 5.76
         }
         applicable_percentage = float(macrs_dict[recovery_year])
-        string_applicable_percentage = str(applicable_percentage) + '%'
+        string_applicable_percentage = str(applicable_percentage * 100) + '%'
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
     elif type_property == 7:
@@ -464,14 +464,14 @@ def calc_macrs_half_year():
             8: 4.46
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string_applicable_percentage = str(applicable_percentage) + '%'
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string_applicable_percentage = str(applicable_percentage * 100) + '%'
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
     elif type_property == 10:
@@ -489,13 +489,13 @@ def calc_macrs_half_year():
             11: 3.28
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
     elif type_property == 15:
@@ -518,13 +518,13 @@ def calc_macrs_half_year():
             16: 2.95
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
     elif type_property == 20:
@@ -552,13 +552,13 @@ def calc_macrs_half_year():
             21: 2.231
         }
         applicable_percentage = macrs_dict[recovery_year]
-        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your MACRS Applicable Percentage is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         applicable_percentage = applicable_percentage / 100
         macrs_depr = acquisition_cost * applicable_percentage
 
         string = 'Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr)
-        green(string)
+        print green(string)
 
 
 
@@ -570,13 +570,13 @@ def calc_macrs_half_year():
     timestr = time.strftime("%Y%m%d-%H%M%S")
     saved_answer = './solutions/answer_MACRS_calculation_half_year' + timestr + '.csv'
     w = open(saved_answer,'a+')
-    write_string = 'MACRS Applicable Percentage: ' + str(applicable_percentage) + '%' + '\n'
+    write_string = 'MACRS Applicable Percentage: ' + str(applicable_percentage * 100) + '%' + '\n'
     w.write(write_string)
     write_string = 'MACRS ANNUAL Depreciation: ' + str(macrs_depr) + '\n'
     w.write(write_string)
     w.close()
     string = 'Your answers are saved at: ' + saved_answer
-    green(string)
+    print green(string)
 
     main()
     return macrs_depr
@@ -601,8 +601,8 @@ def calc_macrs_realty_top():
         }
         applicable_percentage = applicable_percentage_dict[recovery_month]
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -611,8 +611,8 @@ def calc_macrs_realty_top():
         recovery_month = float(raw_input(cyan('What recovery month is it?: ')))
         applicable_percentage = 3.636
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -620,8 +620,8 @@ def calc_macrs_realty_top():
     elif 19 <= recovery_year <= 27:
         applicable_percentage = 3.637
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -647,8 +647,8 @@ def calc_macrs_realty_top():
         else:
             applicable_percentage = applicable_percentage_dict[recovery_month]
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -670,8 +670,8 @@ def calc_macrs_realty_top():
         else:
             applicable_percentage = applicable_percentage_dict[recovery_month]
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -703,8 +703,8 @@ def calc_macrs_realty_middle():
         recovery_month = float(raw_input(cyan('What recovery month is it?: ')))
         applicable_percentage = applicable_percentage_dict[recovery_month]
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -713,8 +713,8 @@ def calc_macrs_realty_middle():
     elif 2 <= recovery_year <= 19:
         applicable_percentage = 3.175
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -722,8 +722,8 @@ def calc_macrs_realty_middle():
     elif 20 <= recovery_year <= 31:
         applicable_percentage = 3.174
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -743,8 +743,8 @@ def calc_macrs_realty_middle():
         else:
             applicable_percentage = applicable_percentage_dict[recovery_month]
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -764,8 +764,8 @@ def calc_macrs_realty_middle():
             }
             applicable_percentage = applicable_percentage_dict[recovery_month]
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -774,13 +774,13 @@ def calc_macrs_realty_middle():
     timestr = time.strftime("%Y%m%d-%H%M%S")
     saved_answer = './solutions/answer_MACRS_calculation_realty_mid_month_convention' + timestr + '.csv'
     w = open(saved_answer,'a+')
-    write_string = 'MACRS Applicable Percentage: ' + str(applicable_percentage) + '%' + '\n'
+    write_string = 'MACRS Applicable Percentage: ' + str(applicable_percentage * 100) + '%' + '\n'
     w.write(write_string)
     write_string = 'MACRS ANNUAL Depreciation: ' + str(macrs_depr) + '\n'
     w.write(write_string)
     w.close()
     string = 'Your answers are saved at: ' + saved_answer
-    green(string)
+    print green(string)
     return
 def calc_macrs_realty_bottom():
     yellow('39-YEAR Non-residential Real Property')
@@ -805,8 +805,8 @@ def calc_macrs_realty_bottom():
         recovery_month = str(raw_input("What recovery month is it? Enter a number: ").replace(',',''))
         applicable_percentage = applicable_percentage_dict[recovery_month]
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -816,8 +816,8 @@ def calc_macrs_realty_bottom():
     elif 2 <= recovery_year <= 39:
         applicable_percentage = 2.564
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -840,8 +840,8 @@ def calc_macrs_realty_bottom():
         recovery_month = str(raw_input(cyan("What recovery month is it? Enter a number: ")).replace(',',''))
         applicable_percentage = applicable_percentage_dict[recovery_month]
         applicable_percentage = applicable_percentage / 100
-        string = 'Your applicable percentage rate is: ' + str(applicable_percentage)
-        yellow(string)
+        string = 'Your applicable percentage rate is: ' + str(applicable_percentage * 100) + '%'
+        print yellow(string)
         acquisition_cost = float(raw_input(cyan('Enter the acquisition cost for the asset: ')).replace(',',''))
         macrs_depr = acquisition_cost * applicable_percentage
         print green('Your CURRENT YEAR MACRS Depreciation is: ' + str(macrs_depr))
@@ -849,13 +849,13 @@ def calc_macrs_realty_bottom():
     timestr = time.strftime("%Y%m%d-%H%M%S")
     saved_answer = './solutions/answer_MACRS_calculation_realty_mid_month_convention' + timestr + '.csv'
     w = open(saved_answer,'a+')
-    write_string = 'MACRS Applicable Percentage: ' + str(applicable_percentage) + '%' + '\n'
+    write_string = 'MACRS Applicable Percentage: ' + str(applicable_percentage * 100) + '%' + '\n'
     w.write(write_string)
     write_string = 'MACRS ANNUAL Depreciation: ' + str(macrs_depr) + '\n'
     w.write(write_string)
     w.close()
     string = 'Your answers are saved at: ' + saved_answer
-    green(string)
+    print green(string)
 
     mid_month_sale_realty()
     main()
@@ -867,7 +867,7 @@ def find_macrs_depr(calc_selected):
     if calc_selected == "MACRS-Personalty":
         mid_quarter_cutoff_date = 'October 1st'
         yellow('The Mid-Quarter Cutoff Date is last 1/4 of year, or if using regular annual years, October 1st')
-        mq_question = str(raw_input(cyan('Is your property PLACED IN SERVICE on or after October 1st?: ')))
+        mq_question = str(raw_input(cyan('Is your property PLACED IN SERVICE on or after October 1st? Type "y" or "n": ')))
         if mq_question == "y":
             # percentage_assets_question = str(raw_input(cyan('How much of a percentage is placed in the last quarter?: ')))
             percentage_assets_question = float(raw_input(cyan('How much of a percentage is placed in the last quarter? No decimals or punctuation: ')).replace('%',''))
@@ -876,6 +876,8 @@ def find_macrs_depr(calc_selected):
             if percentage_assets_question > 0.4:
                 convention = 'Mid-Quarter'
             else:
+                print red("The percentage of assets placed into service at the last quarter of the year, is LESS than 40%")
+                print yellow("SWITCHING to HALF-YEAR depreciation")
                 convention = 'Half-Year'
         elif mq_question == "n":
             convention = 'Half-Year'
@@ -1054,17 +1056,17 @@ def find_macrs_straight_line_half_year():
         find_macrs_straight_line_half_year()
 
     string = 'Your MACRS Depreciation is: ' + str(macrs_depr)
-    green(string)
+    print green(string)
     w.write(string + '\n')
     remaining_basis = acquisition_cost - macrs_depr
     string = 'Your remaining BASIS is: ' + str(remaining_basis)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
     w.close()
 
     string = 'Your solution is located at: ' + saved_answer
 
-    yellow(string)
+    print yellow(string)
     main()
     return
 
@@ -1091,11 +1093,11 @@ def find_s179_calc():
     w = open(saved_answer,'a+')
 
     string = 'SECTION 179 DEDUCTION: ' + str(s179_deduction)
-    green(string)
+    print green(string)
     w.write(string + '\n')
 
     string = 'NEW BASIS AFTER DEDUCTION: ' + str(basis)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
 
     saved_answer = './solutions/s179_solution' + timestr + '.csv'
@@ -1127,13 +1129,17 @@ def s179_addi_macrs_calc():
 
     if basis >= 2540000: # meaning that al dollar for dollar deductions are complete consumed
         s179_deduction = 0
-        red('NO S-179 DEDUCTION ALLOWED: Too much S179 assets, exceeds $2,030,000 by twice the amount')
+        print red('NO S-179 DEDUCTION ALLOWED: Too much S179 assets, exceeds $2,030,000, dollar for dollar penalty reduces entirely to zero')
         main()
     elif basis <= 2030000: # if its at or under $2,030,000
         s179_deduction = 510000
+        if basis <= 510000:
+            s179_deduction = basis
     else: # in the event that it egins to exceed $2,030,000
         s179_deduction = 510000 - (basis - 2030000)
     basis = basis - s179_deduction
+    if basis < 0:
+        basis = 0
     # additional 50% Depr
     # basis = basis - (basis * 0.5)
     additional_fifty_depr = basis * 0.5
@@ -1146,13 +1152,13 @@ def s179_addi_macrs_calc():
     saved_answer = './solutions/comprehensive_question_solution_s179_macrs_additionalbonus' + timestr + '.csv'
     w = open(saved_answer,'a+')
     string = 'SECTION 179 DEDUCTION TAKEN: ' + str(s179_deduction)
-    green(string)
+    print green(string)
     w.write(string + '\n')
     string = 'ADDITIONAL 50% BONUS DEDUCTION TAKEN: ' + str(additional_fifty_depr)
-    green(string)
+    print green(string)
     w.write(string + '\n')
     string = 'REMAINING BASIS: ' + str(basis)
-    red(string)
+    print red(string)
     w.write(string + '\n')
     # find the final macrs deprciation
     # macrs_depr = find_macrs_depr(calc_selected)
@@ -1163,25 +1169,25 @@ def s179_addi_macrs_calc():
     # macrs_depr = float(raw_input(yellow('Please enter the separately calculated MACRS Depreciation because Stack Overflow cant answer shit for a question on returning values properly: ')).replace(',',''))
     basis = basis - macrs_depr
     string = 'FINAL BASIS AFTER DEDUCTIONS: ' + str(basis)
-    green(string)
+    print green(string)
     w.write(string + '\n')
     string = 'SECTION 179 DEDUCTION TAKEN: ' + str(s179_deduction)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
     string = 'ADDITIONAL 50% BONUS DEDUCTION TAKEN: ' + str(additional_fifty_depr)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
 
     string = 'MACRS DEPRECIATION TAKEN: ' + str(macrs_depr)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
     total_depreciation_current_year = s179_deduction + additional_fifty_depr + macrs_depr
     string = 'TOTAL DEPRECIATION TAKEN: ' + str(total_depreciation_current_year)
-    yellow(string)
+    print yellow(string)
     w.write(string + '\n')
     w.close()
     string = '\nYour solution is located here: ' + saved_answer
-    green(string)
+    print green(string)
     main()
     return macrs_depr
 def main():
